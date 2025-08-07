@@ -11,8 +11,8 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-95" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-primary opacity-95" />
       
       {/* Floating Elements */}
       <div className="absolute top-20 left-10 w-32 h-32 bg-accent/20 rounded-full blur-3xl animate-float" />
@@ -23,7 +23,7 @@ const Hero = () => {
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
             Excellence in
-            <span className="block bg-gradient-accent bg-clip-text text-transparent">
+            <span className="block text-accent-foreground">
               Education
             </span>
           </h1>

@@ -36,7 +36,7 @@ const Testimonials = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Success <span className="bg-gradient-secondary bg-clip-text text-transparent">Stories</span>
+            Success <span className="text-secondary">Stories</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hear from our successful students who achieved their academic dreams with Gayatri Foundation
@@ -52,7 +52,7 @@ const Testimonials = () => {
               
               {/* Student Info */}
               <div className="flex items-center mb-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-2xl mr-4">
+                <div className="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl mr-4">
                   {testimonial.image}
                 </div>
                 <div>

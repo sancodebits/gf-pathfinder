@@ -56,10 +56,10 @@ const Enquiry = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-16">
+      <section className="bg-primary py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Get in <span className="bg-gradient-accent bg-clip-text text-transparent">Touch</span>
+            Get in <span className="text-accent-foreground">Touch</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             Have questions about our courses? Ready to start your academic journey? We're here to help!
@@ -189,7 +189,7 @@ const Enquiry = () => {
                 </div>
               </Card>
 
-              <Card className="p-6 bg-gradient-secondary text-secondary-foreground">
+              <Card className="p-6 bg-secondary text-secondary-foreground">
                 <h3 className="text-xl font-bold mb-4">Why Students Choose Us?</h3>
                 <div className="space-y-3">
                   {[

@@ -28,7 +28,7 @@ const Navigation = () => {
               <img src={logo} alt="Gayatri Foundation" className="w-full h-full object-cover" />
             </div>
             <div>
-              <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">Gayatri Foundation</h1>
+              <h1 className="text-xl font-bold text-primary">Gayatri Foundation</h1>
               <p className="text-xs text-muted-foreground">Excellence in Education</p>
             </div>
           </Link>
