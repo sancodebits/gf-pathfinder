@@ -64,7 +64,7 @@ const ChatBot = () => {
     <div className="fixed bottom-6 right-6 z-50">
       <Card className="w-80 h-96 flex flex-col shadow-strong">
         {/* Header */}
-        <div className="bg-gradient-primary p-4 rounded-t-lg">
+        <div className="bg-primary p-4 rounded-t-lg">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
               <div className="w-8 h-8 bg-accent rounded-full flex items-center justify-center">

@@ -2,14 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Gayatri Foundation Educational Design System
-All colors are HSL for consistency and theming support.
+/* Modern White and Blue Design System
+Clean, professional color scheme with simple solid colors.
 */
 
 @layer base {
   :root {
-    /* Base colors - Modern vibrant theme */
-    --background: 220 20% 98%;
+    /* Base colors - Clean white and blue theme */
+    --background: 0 0% 100%;
     --foreground: 220 15% 12%;
 
     /* Card and surface colors */
@@ -19,21 +19,21 @@ All colors are HSL for consistency and theming support.
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 12%;
 
-    /* Primary - Vibrant Electric Blue */
-    --primary: 220 90% 55%;
+    /* Primary - Clean Blue */
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 85% 65%;
-    --primary-glow: 220 95% 70%;
+    --primary-light: 210 100% 60%;
+    --primary-glow: 210 100% 65%;
 
-    /* Secondary - Modern Emerald Green */
-    --secondary: 160 85% 45%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 160 80% 55%;
+    /* Secondary - Light Blue */
+    --secondary: 210 100% 85%;
+    --secondary-foreground: 220 15% 12%;
+    --secondary-light: 210 100% 90%;
 
-    /* Accent - Vibrant Purple/Magenta */
-    --accent: 280 85% 65%;
+    /* Accent - Darker Blue */
+    --accent: 210 100% 40%;
     --accent-foreground: 0 0% 100%;
-    --accent-light: 280 80% 75%;
+    --accent-light: 210 100% 45%;
 
     /* Supporting colors */
     --muted: 220 20% 95%;
@@ -44,23 +44,16 @@ All colors are HSL for consistency and theming support.
 
     --border: 220 20% 88%;
     --input: 220 20% 88%;
-    --ring: 220 90% 55%;
+    --ring: 210 100% 50%;
 
     --radius: 1rem;
 
-    /* Modern vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--primary-glow)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-light)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
-    --gradient-vibrant: linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 25%, hsl(var(--secondary)) 50%, hsl(var(--primary-glow)) 100%);
-
-    /* Modern shadows with color */
-    --shadow-soft: 0 4px 25px -5px hsl(var(--primary) / 0.15);
-    --shadow-medium: 0 10px 50px -10px hsl(var(--primary) / 0.25);
-    --shadow-strong: 0 20px 80px -15px hsl(var(--primary) / 0.35);
-    --shadow-glow: 0 0 60px hsl(var(--accent) / 0.4);
-    --shadow-colored: 0 8px 40px -10px hsl(var(--accent) / 0.3);
+    /* Clean shadows with blue tint */
+    --shadow-soft: 0 4px 25px -5px hsl(210 100% 50% / 0.1);
+    --shadow-medium: 0 10px 50px -10px hsl(210 100% 50% / 0.15);
+    --shadow-strong: 0 20px 80px -15px hsl(210 100% 50% / 0.2);
+    --shadow-glow: 0 0 60px hsl(210 100% 50% / 0.25);
+    --shadow-colored: 0 8px 40px -10px hsl(210 100% 50% / 0.15);
 
     /* Smooth modern animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -68,25 +61,18 @@ All colors are HSL for consistency and theming support.
     --transition-spring: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 
     /* Modern glass effect */
-    --glass-bg: hsla(0, 0%, 100%, 0.1);
-    --glass-border: hsla(0, 0%, 100%, 0.2);
+    --glass-bg: hsla(0, 0%, 100%, 0.9);
+    --glass-border: hsla(210, 100%, 50%, 0.2);
     --backdrop-blur: blur(20px);
 
     --sidebar-background: 220 20% 97%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary: 210 100% 50%;
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 210 100% 50%;
   }
 
   .dark {
@@ -99,7 +85,7 @@ All colors are HSL for consistency and theming support.
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 210 100% 60%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -108,23 +94,23 @@ All colors are HSL for consistency and theming support.
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 210 100% 70%;
+    --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --ring: 210 100% 60%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary: 210 100% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
     --sidebar-accent: 240 3.7% 15.9%;
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-ring: 210 100% 60%;
   }
 }
 

@@ -57,7 +57,7 @@ const AchievementsShowcase = () => {
   ];
 
   return (
-    <section className="relative py-20 bg-gradient-vibrant overflow-hidden">
+    <section className="relative py-20 bg-primary overflow-hidden">
       {/* Floating Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-1/4 w-72 h-72 bg-accent/10 rounded-full blur-3xl animate-pulse-glow" />
@@ -69,7 +69,7 @@ const AchievementsShowcase = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Achievements</span>
+            Our <span className="text-accent-foreground">Achievements</span>
           </h2>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             Celebrating milestones of excellence and student success stories that inspire us every day
@@ -86,7 +86,7 @@ const AchievementsShowcase = () => {
                 alt="Gayatri Foundation School Building"
                 className="w-full h-96 object-cover transition-transform duration-700 hover:scale-110"
               />
-              <div className="absolute inset-0 bg-gradient-primary opacity-20" />
+              <div className="absolute inset-0 bg-primary opacity-20" />
               <div className="absolute bottom-6 left-6 right-6">
                 <Card className="p-6 bg-white/10 backdrop-blur-md border-white/20">
                   <h3 className="text-2xl font-bold text-white mb-2">Modern Learning Campus</h3>
@@ -107,7 +107,7 @@ const AchievementsShowcase = () => {
                   alt={image.alt}
                   className="w-full h-full object-cover rounded-xl"
                 />
-                <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-xl" />
+                <div className="absolute inset-0 bg-primary opacity-10 rounded-xl" />
               </div>
             ))}
           </div>
@@ -122,7 +122,7 @@ const AchievementsShowcase = () => {
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
+                    <div className="w-12 h-12 bg-accent rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                       <achievement.icon className="w-6 h-6 text-accent-foreground" />
                     </div>
                     <div className="text-3xl font-bold text-accent">{achievement.count}</div>

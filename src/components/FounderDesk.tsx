@@ -61,7 +61,7 @@ const FounderDesk = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Meet Our <span className="bg-gradient-primary bg-clip-text text-transparent">Leadership</span>
+            Meet Our <span className="text-primary">Leadership</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Dedicated educators and visionaries committed to providing exceptional educational experiences
@@ -74,7 +74,7 @@ const FounderDesk = () => {
             <Card key={index} className="overflow-hidden hover:shadow-strong transition-all duration-300 group">
               <div className="relative">
                 {/* Background Gradient */}
-                <div className="absolute inset-0 bg-gradient-primary opacity-5" />
+                <div className="absolute inset-0 bg-primary opacity-5" />
                 
                 <div className="relative p-8">
                   {/* Leader Image & Info */}
@@ -135,7 +135,7 @@ const FounderDesk = () => {
         </div>
 
         {/* Vision Statement */}
-        <Card className="p-8 bg-gradient-secondary text-secondary-foreground text-center">
+        <Card className="p-8 bg-secondary text-secondary-foreground text-center">
           <h3 className="text-2xl font-bold mb-4">Our Collective Vision</h3>
           <p className="text-lg leading-relaxed max-w-4xl mx-auto">
             Together, we envision an educational ecosystem where every student is empowered with knowledge, 

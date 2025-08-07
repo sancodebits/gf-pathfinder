@@ -20,7 +20,7 @@ const Courses = () => {
         "Study Material Included",
         "Progress Tracking"
       ],
-      color: "bg-gradient-primary",
+      color: "bg-primary",
       fee: "₹15,000/year"
     },
     {
@@ -38,7 +38,7 @@ const Courses = () => {
         "Time Management Training",
         "Performance Analytics"
       ],
-      color: "bg-gradient-secondary",
+      color: "bg-secondary",
       fee: "₹20,000/year"
     },
     {
@@ -56,7 +56,7 @@ const Courses = () => {
         "Industry Expert Sessions",
         "Scholarship Opportunities"
       ],
-      color: "bg-gradient-accent",
+      color: "bg-accent",
       fee: "₹25,000/year"
     },
     {
@@ -74,7 +74,7 @@ const Courses = () => {
         "Success Tracking System",
         "Interview Preparation"
       ],
-      color: "bg-gradient-primary",
+      color: "bg-primary",
       fee: "₹18,000/program"
     }
   ];
@@ -82,10 +82,10 @@ const Courses = () => {
   return (
     <div className="min-h-screen pt-20">
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-16">
+      <section className="bg-primary py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Courses</span>
+            Our <span className="text-accent-foreground">Courses</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             Comprehensive educational programs designed for academic excellence and competitive success

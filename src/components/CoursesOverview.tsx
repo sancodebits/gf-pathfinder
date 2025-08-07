@@ -11,7 +11,7 @@ const CoursesOverview = () => {
       subtitle: "Class 6-8",
       description: "Building strong academic fundamentals with interactive learning methods and concept clarity.",
       features: ["Interactive Learning", "Concept Building", "Regular Assessments"],
-      color: "bg-gradient-primary"
+      color: "bg-primary"
     },
     {
       icon: Brain,
@@ -19,7 +19,7 @@ const CoursesOverview = () => {
       subtitle: "Class 9-10",
       description: "Comprehensive preparation for board exams with strategic study plans and practice tests.",
       features: ["Board Exam Prep", "Question Banks", "Mock Tests"],
-      color: "bg-gradient-secondary"
+      color: "bg-secondary"
     },
     {
       icon: GraduationCap,
@@ -27,7 +27,7 @@ const CoursesOverview = () => {
       subtitle: "Class 11-12",
       description: "Specialized coaching for Science, Commerce & Arts with career guidance and competitive exam prep.",
       features: ["Stream Specialization", "Career Guidance", "Competitive Prep"],
-      color: "bg-gradient-accent"
+      color: "bg-accent"
     },
     {
       icon: Target,
@@ -35,7 +35,7 @@ const CoursesOverview = () => {
       subtitle: "Navodaya Coaching",
       description: "Dedicated coaching for Jawahar Navodaya Vidyalaya entrance exam with proven success strategies.",
       features: ["Specialized Curriculum", "Mock Tests", "Success Tracking"],
-      color: "bg-gradient-primary"
+      color: "bg-primary"
     }
   ];
 
@@ -45,7 +45,7 @@ const CoursesOverview = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Courses</span>
+            Our <span className="text-primary">Courses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive educational programs designed to excel in academics and competitive examinations
