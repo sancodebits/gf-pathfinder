@@ -8,59 +8,59 @@ All colors are HSL for consistency and theming support.
 
 @layer base {
   :root {
-    /* Base colors - Modern vibrant theme */
-    --background: 220 20% 98%;
-    --foreground: 220 15% 12%;
+    /* Base colors - Clean white theme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 9%;
 
     /* Card and surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 220 15% 12%;
+    --card-foreground: 0 0% 9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 15% 12%;
+    --popover-foreground: 0 0% 9%;
 
-    /* Primary - Vibrant Electric Blue */
-    --primary: 220 90% 55%;
+    /* Primary - Professional Blue */
+    --primary: 220 70% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 220 85% 65%;
-    --primary-glow: 220 95% 70%;
+    --primary-light: 220 60% 60%;
+    --primary-glow: 220 50% 70%;
 
-    /* Secondary - Modern Emerald Green */
-    --secondary: 160 85% 45%;
-    --secondary-foreground: 0 0% 100%;
-    --secondary-light: 160 80% 55%;
+    /* Secondary - Subtle Accent */
+    --secondary: 220 15% 96%;
+    --secondary-foreground: 0 0% 9%;
+    --secondary-light: 220 10% 98%;
 
-    /* Accent - Vibrant Purple/Magenta */
-    --accent: 280 85% 65%;
-    --accent-foreground: 0 0% 100%;
-    --accent-light: 280 80% 75%;
+    /* Accent - Refined Accent */
+    --accent: 220 15% 96%;
+    --accent-foreground: 0 0% 9%;
+    --accent-light: 220 10% 98%;
 
     /* Supporting colors */
-    --muted: 220 20% 95%;
-    --muted-foreground: 220 15% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 8% 46%;
 
     --destructive: 0 85% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 20% 88%;
-    --input: 220 20% 88%;
-    --ring: 220 90% 55%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 70% 50%;
 
-    --radius: 1rem;
+    --radius: 0.75rem;
 
-    /* Modern vibrant gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 50%, hsl(var(--primary-glow)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--secondary-light)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 50%, hsl(var(--secondary)) 100%);
+    /* Clean gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
-    --gradient-vibrant: linear-gradient(45deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 25%, hsl(var(--secondary)) 50%, hsl(var(--primary-glow)) 100%);
+    --gradient-vibrant: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
 
-    /* Modern shadows with color */
-    --shadow-soft: 0 4px 25px -5px hsl(var(--primary) / 0.15);
-    --shadow-medium: 0 10px 50px -10px hsl(var(--primary) / 0.25);
-    --shadow-strong: 0 20px 80px -15px hsl(var(--primary) / 0.35);
-    --shadow-glow: 0 0 60px hsl(var(--accent) / 0.4);
-    --shadow-colored: 0 8px 40px -10px hsl(var(--accent) / 0.3);
+    /* Subtle shadows */
+    --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 15px rgb(0 0 0 / 0.1);
+    --shadow-colored: 0 4px 6px -1px rgb(0 0 0 / 0.1);
 
     /* Smooth modern animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
