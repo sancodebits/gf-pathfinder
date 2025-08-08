@@ -85,7 +85,7 @@ const Courses = () => {
       <section className="bg-gradient-hero py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Courses</span>
+            <span className="text-gradient-primary">Our</span> <span className="bg-gradient-accent bg-clip-text text-transparent">Courses</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             Comprehensive educational programs designed for academic excellence and competitive success

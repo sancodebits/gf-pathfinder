@@ -69,7 +69,7 @@ const AchievementsShowcase = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-poppins">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Achievements</span>
+            <span className="text-gradient-primary">Our</span> <span className="bg-gradient-accent bg-clip-text text-transparent">Achievements</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-inter">
             Celebrating milestones of excellence and student success stories that inspire us every day

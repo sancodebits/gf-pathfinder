@@ -45,7 +45,7 @@ const CoursesOverview = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-poppins">
-            Our <span className="text-primary">Courses</span>
+            <span className="text-gradient-primary">Our</span> <span className="text-gradient-accent">Courses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive educational programs designed to excel in academics and competitive examinations
