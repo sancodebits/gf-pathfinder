@@ -8,59 +8,59 @@ All colors are HSL for consistency and theming support.
 
 @layer base {
   :root {
-    /* Base colors - Clean white theme */
+    /* Base colors - Modern clean theme */
     --background: 0 0% 100%;
-    --foreground: 0 0% 9%;
+    --foreground: 240 10% 3.9%;
 
     /* Card and surface colors */
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 9%;
+    --card-foreground: 240 10% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 9%;
+    --popover-foreground: 240 10% 3.9%;
 
-    /* Primary - Professional Blue */
-    --primary: 220 70% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-light: 220 60% 60%;
-    --primary-glow: 220 50% 70%;
+    /* Primary - Modern Blue */
+    --primary: 221 83% 53%;
+    --primary-foreground: 0 0% 98%;
+    --primary-light: 221 70% 65%;
+    --primary-glow: 221 60% 75%;
 
-    /* Secondary - Subtle Accent */
-    --secondary: 220 15% 96%;
-    --secondary-foreground: 0 0% 9%;
-    --secondary-light: 220 10% 98%;
+    /* Secondary - Sophisticated Gray */
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --secondary-light: 240 4.8% 97.9%;
 
-    /* Accent - Refined Accent */
-    --accent: 220 15% 96%;
-    --accent-foreground: 0 0% 9%;
-    --accent-light: 220 10% 98%;
+    /* Accent - Modern Purple */
+    --accent: 262 83% 58%;
+    --accent-foreground: 0 0% 98%;
+    --accent-light: 262 70% 70%;
 
     /* Supporting colors */
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
 
-    --destructive: 0 85% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 220 70% 50%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
-    /* Clean gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    /* Modern gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
-    --gradient-vibrant: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+    --gradient-vibrant: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 50%, hsl(var(--secondary)) 100%);
 
-    /* Subtle shadows */
+    /* Modern shadows */
     --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
     --shadow-medium: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     --shadow-strong: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --shadow-glow: 0 0 15px rgb(0 0 0 / 0.1);
-    --shadow-colored: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --shadow-glow: 0 0 0 1px hsl(var(--primary) / 0.05), 0 1px 2px -0.5px hsl(var(--primary) / 0.1);
+    --shadow-colored: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -2px hsl(var(--primary) / 0.06);
 
     /* Smooth modern animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -134,6 +134,8 @@ All colors are HSL for consistency and theming support.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: 'cv11', 'ss01';
+    font-variation-settings: 'opsz' 32;
   }
 }
