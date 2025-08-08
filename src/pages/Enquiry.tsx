@@ -59,7 +59,7 @@ const Enquiry = () => {
       <section className="bg-gradient-hero py-16">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Get in <span className="bg-gradient-accent bg-clip-text text-transparent">Touch</span>
+            <span className="text-gradient-primary">Get in</span> <span className="bg-gradient-accent bg-clip-text text-transparent">Touch</span>
           </h1>
           <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
             Have questions about our courses? Ready to start your academic journey? We're here to help!

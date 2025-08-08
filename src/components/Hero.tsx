@@ -23,8 +23,8 @@ const Hero = () => {
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Headline */}
           <div className="animate-fade-in">
-            <h1 className="text-6xl md:text-8xl font-bold text-primary-foreground mb-8 font-poppins tracking-tight">
-              Excellence in
+            <h1 className="text-6xl md:text-8xl font-bold mb-8 font-poppins tracking-tight">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Excellence in</span>
               <span className="block bg-gradient-accent bg-clip-text text-transparent font-black">
                 Education
               </span>

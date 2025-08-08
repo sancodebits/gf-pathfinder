@@ -139,3 +139,27 @@ All colors are HSL for consistency and theming support.
     font-variation-settings: 'opsz' 32;
   }
 }
+
+@layer utilities {
+  .text-gradient-primary {
+    @apply bg-gradient-primary bg-clip-text text-transparent;
+  }
+  .text-gradient-accent {
+    @apply bg-gradient-accent bg-clip-text text-transparent;
+  }
+  .text-gradient-hero {
+    @apply bg-gradient-hero bg-clip-text text-transparent;
+  }
+  .text-rainbow {
+    background: linear-gradient(90deg, #ff7a7a, #ffb86b, #ffd56b, #6bff95, #6bd4ff, #a26bff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-shift 8s ease infinite;
+  }
+  @keyframes rainbow-shift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+}
