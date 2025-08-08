@@ -44,8 +44,8 @@ const CoursesOverview = () => {
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our <span className="bg-gradient-primary bg-clip-text text-transparent">Courses</span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-poppins">
+            Our <span className="text-primary">Courses</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Comprehensive educational programs designed to excel in academics and competitive examinations
@@ -62,7 +62,7 @@ const CoursesOverview = () => {
                   <course.icon className="w-8 h-8 text-primary-foreground" />
                 </div>
                 
-                <h3 className="text-xl font-bold text-foreground mb-2">{course.title}</h3>
+                <h3 className="text-xl font-bold text-foreground mb-2 font-poppins">{course.title}</h3>
                 <p className="text-primary font-medium mb-3">{course.subtitle}</p>
                 <p className="text-muted-foreground mb-6 leading-relaxed">{course.description}</p>
                 
@@ -70,7 +70,7 @@ const CoursesOverview = () => {
                 <ul className="space-y-2 mb-6">
                   {course.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                      <div className="w-1.5 h-1.5 bg-secondary rounded-full mr-2" />
+                      <div className="w-1.5 h-1.5 bg-primary rounded-full mr-2" />
                       {feature}
                     </li>
                   ))}

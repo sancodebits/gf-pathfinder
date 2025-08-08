@@ -40,19 +40,19 @@ const AchievementsShowcase = () => {
       src: achievement1,
       alt: "Students celebrating academic achievement",
       className: "absolute top-20 left-10 w-48 h-32 rounded-xl shadow-colored animate-float",
-      delay: "0s"
+      delay: "4s"
     },
     {
       src: achievement2,
       alt: "Modern classroom with awards",
       className: "absolute top-32 right-16 w-56 h-36 rounded-xl shadow-colored animate-bounce-gentle",
-      delay: "1s"
+      delay: "8s"
     },
     {
       src: achievement3,
       alt: "JNV entrance coaching success",
       className: "absolute bottom-24 left-20 w-52 h-34 rounded-xl shadow-colored animate-float",
-      delay: "2s"
+      delay: "12s"
     }
   ];
 
@@ -68,10 +68,10 @@ const AchievementsShowcase = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+          <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-poppins">
             Our <span className="bg-gradient-accent bg-clip-text text-transparent">Achievements</span>
           </h2>
-          <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-inter">
             Celebrating milestones of excellence and student success stories that inspire us every day
           </p>
         </div>
@@ -88,9 +88,9 @@ const AchievementsShowcase = () => {
               />
               <div className="absolute inset-0 bg-gradient-primary opacity-20" />
               <div className="absolute bottom-6 left-6 right-6">
-                <Card className="p-6 bg-white/10 backdrop-blur-md border-white/20">
-                  <h3 className="text-2xl font-bold text-white mb-2">Modern Learning Campus</h3>
-                  <p className="text-white/90">State-of-the-art facilities designed for holistic education</p>
+                <Card className="p-6 bg-card/95 backdrop-blur-md border-border shadow-medium">
+                  <h3 className="text-2xl font-bold text-foreground mb-2">Modern Learning Campus</h3>
+                  <p className="text-muted-foreground">State-of-the-art facilities designed for holistic education</p>
                 </Card>
               </div>
             </div>
@@ -118,25 +118,25 @@ const AchievementsShowcase = () => {
               {achievements.map((achievement, index) => (
                 <Card 
                   key={index} 
-                  className="p-6 bg-white/10 backdrop-blur-md border-white/20 hover:bg-white/20 transition-all duration-300 group animate-fade-in"
+                  className="p-6 bg-card/95 backdrop-blur-md border-border hover:bg-card transition-all duration-300 group animate-fade-in shadow-medium"
                   style={{ animationDelay: `${index * 0.2}s` }}
                 >
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 bg-gradient-accent rounded-xl flex items-center justify-center mr-4 group-hover:scale-110 transition-transform">
                       <achievement.icon className="w-6 h-6 text-accent-foreground" />
                     </div>
-                    <div className="text-3xl font-bold text-accent">{achievement.count}</div>
+                    <div className="text-3xl font-bold text-accent font-poppins">{achievement.count}</div>
                   </div>
-                  <h4 className="text-lg font-semibold text-primary-foreground mb-2">{achievement.title}</h4>
-                  <p className="text-primary-foreground/80 text-sm leading-relaxed">{achievement.description}</p>
+                  <h4 className="text-lg font-semibold text-foreground mb-2 font-poppins">{achievement.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{achievement.description}</p>
                 </Card>
               ))}
             </div>
 
             {/* Call to Action */}
-            <Card className="p-8 bg-white/10 backdrop-blur-md border-white/20">
-              <h3 className="text-2xl font-bold text-primary-foreground mb-4">Ready to be Part of Our Success Story?</h3>
-              <p className="text-primary-foreground/90 mb-6">
+            <Card className="p-8 bg-card/95 backdrop-blur-md border-border shadow-medium">
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Ready to be Part of Our Success Story?</h3>
+              <p className="text-muted-foreground mb-6">
                 Join thousands of successful students who have achieved their dreams with Gayatri Foundation. 
                 Start your journey towards academic excellence today.
               </p>
@@ -145,7 +145,7 @@ const AchievementsShowcase = () => {
                   Enroll Now
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="lg" className="flex-1 border-white/30 text-primary-foreground hover:bg-white/10">
+                <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted">
                   View Success Stories
                 </Button>
               </div>
@@ -162,8 +162,8 @@ const AchievementsShowcase = () => {
             { label: "Success Rate", value: "98%" }
           ].map((stat, index) => (
             <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1 + 1}s` }}>
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">{stat.value}</div>
-              <div className="text-primary-foreground/80">{stat.label}</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2 font-poppins">{stat.value}</div>
+              <div className="text-muted-foreground font-medium">{stat.label}</div>
             </div>
           ))}
         </div>
