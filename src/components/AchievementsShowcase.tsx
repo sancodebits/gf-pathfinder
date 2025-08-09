@@ -35,23 +35,23 @@ const AchievementsShowcase = () => {
     }
   ];
 
-  const floatingImages = [
+  const achievementImages = [
     {
       src: achievement1,
       alt: "Students celebrating academic achievement",
-      className: "absolute top-20 left-10 w-48 h-32 rounded-xl shadow-colored animate-float",
+      className: "absolute top-20 left-10 w-48 h-32 rounded-xl shadow-colored animate-slide-in-left",
       delay: "5s"
     },
     {
       src: achievement2,
       alt: "Modern classroom with awards",
-      className: "absolute top-32 right-16 w-56 h-36 rounded-xl shadow-colored animate-bounce-gentle",
+      className: "absolute top-32 right-16 w-56 h-36 rounded-xl shadow-colored animate-slide-in-right",
       delay: "10s"
     },
     {
       src: achievement3,
       alt: "JNV entrance coaching success",
-      className: "absolute bottom-24 left-20 w-52 h-34 rounded-xl shadow-colored animate-float",
+      className: "absolute bottom-24 left-20 w-52 h-34 rounded-xl shadow-colored animate-slide-in-up",
       delay: "15s"
     }
   ];
@@ -95,8 +95,8 @@ const AchievementsShowcase = () => {
               </div>
             </div>
 
-            {/* Floating Achievement Images */}
-            {floatingImages.map((image, index) => (
+            {/* Sliding Achievement Images */}
+            {achievementImages.map((image, index) => (
               <div 
                 key={index}
                 className={image.className}

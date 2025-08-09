@@ -24,7 +24,7 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold text-primary-foreground mb-8 font-poppins tracking-tight">
-              Excellence in
+              <span className="text-primary font-bold">Excellence</span> in
               <span className="block bg-gradient-accent bg-clip-text text-transparent font-black">
                 Education
               </span>
@@ -33,7 +33,7 @@ const Hero = () => {
           
           {/* Subtitle */}
           <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
-            <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-4xl mx-auto leading-relaxed font-inter font-medium">
+            <p className="text-xl md:text-2xl text-slate-700 mb-12 max-w-4xl mx-auto leading-relaxed font-inter font-medium">
               Empowering students from Class 6-12 with comprehensive academic support 
               and specialized JNV entrance coaching at Gayatri Foundation.
             </p>
