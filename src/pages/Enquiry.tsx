@@ -215,7 +215,7 @@ const Enquiry = () => {
                 </p>
                 <div className="flex items-center justify-center space-x-2 text-secondary">
                   <CheckCircle className="w-5 h-5" />
-                  <span className="font-semibold">24/7 Support Available</span>
+                  <span className="font-semibold text-slate-800">24/7 Support Available</span>
                 </div>
               </Card>
             </div>

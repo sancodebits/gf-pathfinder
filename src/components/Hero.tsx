@@ -1,12 +1,15 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Trophy, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const stats = [
-    { icon: BookOpen, label: "Courses", value: "15+" },
-    { icon: Users, label: "Students", value: "2000+" },
-    { icon: Trophy, label: "Success Rate", value: "95%" }
+    { icon: BookOpen, label: t('hero.courses'), value: "15+" },
+    { icon: Users, label: t('hero.students'), value: "2000+" },
+    { icon: Trophy, label: t('hero.success'), value: "95%" }
   ];
 
   return (
@@ -24,9 +27,9 @@ const Hero = () => {
           {/* Main Headline */}
           <div className="animate-fade-in">
             <h1 className="text-6xl md:text-8xl font-bold text-primary-foreground mb-8 font-poppins tracking-tight">
-              <span className="text-primary font-bold">Excellence</span> in
+              <span className="text-primary font-bold">{t('hero.excellence')}</span> in
               <span className="block bg-gradient-accent bg-clip-text text-transparent font-black">
-                Education
+                {t('hero.education')}
               </span>
             </h1>
           </div>
@@ -34,19 +37,18 @@ const Hero = () => {
           {/* Subtitle */}
           <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
             <p className="text-xl md:text-2xl text-slate-700 mb-12 max-w-4xl mx-auto leading-relaxed font-inter font-medium">
-              Empowering students from Class 6-12 with comprehensive academic support 
-              and specialized JNV entrance coaching at Gayatri Foundation.
+              {t('hero.subtitle')}
             </p>
           </div>
           
           {/* CTA Buttons */}
           <div className="animate-scale-in flex flex-col sm:flex-row gap-6 justify-center mb-20" style={{ animationDelay: "0.4s" }}>
             <Button variant="accent" size="lg" className="text-lg px-10 py-6 font-semibold shadow-strong hover:shadow-glow transition-all duration-300 hover:scale-105">
-              Start Your Journey
+              {t('hero.start')}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-10 py-6 border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold backdrop-blur-sm">
-              Explore Courses
+            <Button variant="hero" size="lg" className="text-lg px-10 py-6 font-semibold backdrop-blur-sm shadow-colored">
+              {t('hero.explore')}
             </Button>
           </div>
           

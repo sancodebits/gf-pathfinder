@@ -2,8 +2,11 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, GraduationCap, Target, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const CoursesOverview = () => {
+  const { t } = useLanguage();
+  
   const courses = [
     {
       icon: BookOpen,
@@ -45,10 +48,10 @@ const CoursesOverview = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-poppins">
-            Our <span className="text-primary">Courses</span>
+            {t('courses.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive educational programs designed to excel in academics and competitive examinations
+            {t('courses.subtitle')}
           </p>
         </div>
 
@@ -78,7 +81,7 @@ const CoursesOverview = () => {
                 
                 {/* CTA */}
                 <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
-                  Learn More
+                  {t('courses.learn')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -89,7 +92,7 @@ const CoursesOverview = () => {
         {/* Bottom CTA */}
         <div className="text-center">
           <Button variant="hero" size="lg" className="px-8 py-4">
-            View All Courses
+            {t('courses.viewall')}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
         </div>

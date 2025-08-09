@@ -1,35 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Award, Star, Users, Target, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import schoolBuilding from "@/assets/school-building.jpg";
 import achievement1 from "@/assets/achievement1.jpg";
 import achievement2 from "@/assets/achievement2.jpg";
 import achievement3 from "@/assets/achievement3.jpg";
 
 const AchievementsShowcase = () => {
+  const { t } = useLanguage();
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  
   const achievements = [
     {
       icon: Trophy,
-      title: "Excellence Awards",
+      title: t('achievements.excellence'),
       count: "25+",
       description: "Regional and National Educational Excellence Awards"
     },
     {
       icon: Award,
-      title: "JNV Success Rate",
+      title: t('achievements.jnvsuccess'),
       count: "98%",
       description: "Students qualifying in Navodaya Vidyalaya entrance exams"
     },
     {
       icon: Star,
-      title: "Board Toppers",
+      title: t('achievements.toppers'),
       count: "150+",
       description: "Students achieving 90%+ marks in board examinations"
     },
     {
       icon: Users,
-      title: "Alumni Network",
+      title: t('achievements.alumni'),
       count: "5000+",
       description: "Successful graduates in top colleges and careers"
     }
@@ -38,23 +42,27 @@ const AchievementsShowcase = () => {
   const achievementImages = [
     {
       src: achievement1,
-      alt: "Students celebrating academic achievement",
-      className: "absolute top-20 left-10 w-48 h-32 rounded-xl shadow-colored animate-slide-in-left",
-      delay: "5s"
+      alt: "Students celebrating academic achievement"
     },
     {
       src: achievement2,
-      alt: "Modern classroom with awards",
-      className: "absolute top-32 right-16 w-56 h-36 rounded-xl shadow-colored animate-slide-in-right",
-      delay: "10s"
+      alt: "Modern classroom with awards"
     },
     {
       src: achievement3,
-      alt: "JNV entrance coaching success",
-      className: "absolute bottom-24 left-20 w-52 h-34 rounded-xl shadow-colored animate-slide-in-up",
-      delay: "15s"
+      alt: "JNV entrance coaching success"
     }
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => 
+        prevIndex === achievementImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [achievementImages.length]);
 
   return (
     <section className="relative py-20 bg-gradient-vibrant overflow-hidden">
@@ -69,47 +77,53 @@ const AchievementsShowcase = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 font-poppins">
-            Our <span className="bg-gradient-accent bg-clip-text text-transparent">Achievements</span>
+            {t('achievements.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-inter">
-            Celebrating milestones of excellence and student success stories that inspire us every day
+            {t('achievements.subtitle')}
           </p>
         </div>
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* School Building Image */}
+          {/* School Building Image with Floating Photos */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-strong">
+            <div className="relative overflow-hidden rounded-2xl shadow-strong h-96">
               <img 
                 src={schoolBuilding} 
                 alt="Gayatri Foundation School Building"
-                className="w-full h-96 object-cover transition-transform duration-700 hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-primary opacity-20" />
-              <div className="absolute bottom-6 left-6 right-6">
+              
+              {/* Full Panel Sliding Achievement Images */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-4/5 h-4/5 rounded-xl overflow-hidden shadow-strong">
+                  {achievementImages.map((image, index) => (
+                    <div 
+                      key={index}
+                      className={`absolute inset-0 transition-opacity duration-1000 ${
+                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+                      }`}
+                    >
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-primary opacity-20" />
+                    </div>
+                  ))}
+                </div>
+              </div>
+              
+              <div className="absolute bottom-6 left-6 right-6 z-10">
                 <Card className="p-6 bg-card/95 backdrop-blur-md border-border shadow-medium">
                   <h3 className="text-2xl font-bold text-foreground mb-2">Modern Learning Campus</h3>
                   <p className="text-muted-foreground">State-of-the-art facilities designed for holistic education</p>
                 </Card>
               </div>
             </div>
-
-            {/* Sliding Achievement Images */}
-            {achievementImages.map((image, index) => (
-              <div 
-                key={index}
-                className={image.className}
-                style={{ animationDelay: image.delay }}
-              >
-                <img 
-                  src={image.src} 
-                  alt={image.alt}
-                  className="w-full h-full object-cover rounded-xl"
-                />
-                <div className="absolute inset-0 bg-gradient-primary opacity-10 rounded-xl" />
-              </div>
-            ))}
           </div>
 
           {/* Achievements Stats */}
@@ -135,18 +149,17 @@ const AchievementsShowcase = () => {
 
             {/* Call to Action */}
             <Card className="p-8 bg-card/95 backdrop-blur-md border-border shadow-medium">
-              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">Ready to be Part of Our Success Story?</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-4 font-poppins">{t('achievements.ready')}</h3>
               <p className="text-muted-foreground mb-6">
-                Join thousands of successful students who have achieved their dreams with Gayatri Foundation. 
-                Start your journey towards academic excellence today.
+                {t('achievements.join')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button variant="accent" size="lg" className="flex-1 group">
-                  Enroll Now
+                  {t('achievements.enroll')}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted">
-                  View Success Stories
+                  {t('achievements.stories')}
                 </Button>
               </div>
             </Card>

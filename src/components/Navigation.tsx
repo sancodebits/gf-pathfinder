@@ -3,17 +3,20 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { name: "Home", path: "/" },
-    { name: "Courses", path: "/courses" },
-    { name: "Enquiry", path: "/enquiry" },
-    { name: "About", path: "/about" },
-    { name: "Contact", path: "/contact" }
+    { name: t('nav.home'), path: "/" },
+    { name: t('nav.courses'), path: "/courses" },
+    { name: t('nav.enquiry'), path: "/enquiry" },
+    { name: t('nav.about'), path: "/about" },
+    { name: t('nav.contact'), path: "/contact" }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -29,7 +32,7 @@ const Navigation = () => {
             </div>
             <div>
               <h1 className="text-xl font-bold text-primary font-poppins">Gayatri Foundation</h1>
-              <p className="text-xs text-muted-foreground font-medium">Excellence in Education</p>
+              <p className="text-xs text-muted-foreground font-medium">{t('nav.excellence')}</p>
             </div>
           </Link>
 
@@ -50,12 +53,13 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher />
             <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
               <MessageCircle className="w-4 h-4 mr-2" />
-              Chat
+              {t('nav.chat')}
             </Button>
             <Button variant="hero" size="sm" className="shadow-colored">
-              Enroll Now
+              {t('nav.enroll')}
             </Button>
           </div>
 
@@ -85,12 +89,13 @@ const Navigation = () => {
                 </Link>
               ))}
               <div className="flex flex-col space-y-2 pt-4">
+                <LanguageSwitcher />
                 <Button variant="ghost" size="sm" className="text-primary justify-start">
                   <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat with Us
+                  {t('nav.chat')}
                 </Button>
                 <Button variant="hero" size="sm">
-                  Enroll Now
+                  {t('nav.enroll')}
                 </Button>
               </div>
             </div>
