@@ -19,41 +19,41 @@ All colors are HSL for consistency and theming support.
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    /* Primary - Modern Blue */
-    --primary: 221 83% 53%;
+    /* Primary - Deep Teal */
+    --primary: 185 84% 25%;
     --primary-foreground: 0 0% 98%;
-    --primary-light: 221 70% 65%;
-    --primary-glow: 221 60% 75%;
+    --primary-light: 185 65% 45%;
+    --primary-glow: 185 55% 65%;
 
-    /* Secondary - Sophisticated Gray */
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --secondary-light: 240 4.8% 97.9%;
+    /* Secondary - Warm Gray */
+    --secondary: 30 5% 95%;
+    --secondary-foreground: 30 15% 15%;
+    --secondary-light: 30 3% 97%;
 
-    /* Accent - Modern Purple */
-    --accent: 262 83% 58%;
+    /* Accent - Coral */
+    --accent: 14 88% 55%;
     --accent-foreground: 0 0% 98%;
-    --accent-light: 262 70% 70%;
+    --accent-light: 14 78% 70%;
 
     /* Supporting colors */
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 30 5% 96%;
+    --muted-foreground: 30 15% 35%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 221 83% 53%;
+    --border: 30 8% 88%;
+    --input: 30 8% 88%;
+    --ring: 185 84% 25%;
 
     --radius: 0.75rem;
 
     /* Modern gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--background)) 100%);
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-light)) 100%);
-    --gradient-vibrant: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(var(--muted)) 50%, hsl(var(--secondary)) 100%);
+    --gradient-vibrant: linear-gradient(135deg, hsl(var(--background)) 0%, hsl(30 8% 98%) 50%, hsl(var(--secondary)) 100%);
 
     /* Modern shadows */
     --shadow-soft: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -99,16 +99,16 @@ All colors are HSL for consistency and theming support.
     --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 221 83% 53%;
-    --primary-foreground: 240 10% 3.9%;
+    --primary: 185 84% 35%;
+    --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 3.7% 15.9%;
+    --secondary: 30 8% 12%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 30 8% 12%;
+    --muted-foreground: 30 5% 70%;
 
-    --accent: 262 83% 58%;
+    --accent: 14 88% 55%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 72% 51%;

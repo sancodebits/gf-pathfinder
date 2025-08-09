@@ -40,19 +40,19 @@ const AchievementsShowcase = () => {
       src: achievement1,
       alt: "Students celebrating academic achievement",
       className: "absolute top-20 left-10 w-48 h-32 rounded-xl shadow-colored animate-float",
-      delay: "4s"
+      delay: "5s"
     },
     {
       src: achievement2,
       alt: "Modern classroom with awards",
       className: "absolute top-32 right-16 w-56 h-36 rounded-xl shadow-colored animate-bounce-gentle",
-      delay: "8s"
+      delay: "10s"
     },
     {
       src: achievement3,
       alt: "JNV entrance coaching success",
       className: "absolute bottom-24 left-20 w-52 h-34 rounded-xl shadow-colored animate-float",
-      delay: "12s"
+      delay: "15s"
     }
   ];
 
