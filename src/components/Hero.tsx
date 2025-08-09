@@ -13,13 +13,19 @@ const Hero = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      style={{ background: 'linear-gradient(135deg,rgb(26, 213, 198) 0%,rgb(15, 220, 243) 100%)' }} // pine green (#01796f) to orange (#ffa500)
+    >
       {/* Modern Background Pattern */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-mesh-pattern opacity-20" style={{ backgroundSize: '50px 50px' }} />
-        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-20 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
+        {/* Adjusted mesh pattern opacity for this darker bg */}
+        <div className="absolute inset-0 bg-mesh-pattern opacity-10" style={{ backgroundSize: '50px 50px' }} />
+        
+        {/* Background blobs matching pine and orange */}
+        <div className="absolute top-20 left-20 w-72 h-72 bg-[#01796f]/30 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-[#01796f]/30 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#01796f]/15 rounded-full blur-3xl" />
       </div>
       
       <div className="relative z-10 container mx-auto px-4 py-20">
