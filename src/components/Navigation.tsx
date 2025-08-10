@@ -4,10 +4,12 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import EnrollmentModal from "@/components/EnrollmentModal";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
   const location = useLocation();
   const { t } = useLanguage();
 
@@ -16,7 +18,8 @@ const Navigation = () => {
     { name: t('nav.courses'), path: "/courses" },
     { name: t('nav.enquiry'), path: "/enquiry" },
     { name: t('nav.about'), path: "/about" },
-    { name: t('nav.contact'), path: "/contact" }
+    { name: t('nav.contact'), path: "/contact" },
+    { name: t('nav.news'), path: "/news" }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -54,11 +57,24 @@ const Navigation = () => {
           {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <LanguageSwitcher />
-            <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
+            <Button 
+              variant="ghost" 
+              size="sm" 
+              className="text-primary hover:bg-primary/10"
+              onClick={() => {
+                const chatBot = document.querySelector('[data-chat-bot]');
+                if (chatBot) chatBot.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
               <MessageCircle className="w-4 h-4 mr-2" />
               {t('nav.chat')}
             </Button>
-            <Button variant="hero" size="sm" className="shadow-colored">
+            <Button 
+              variant="hero" 
+              size="sm" 
+              className="shadow-colored"
+              onClick={() => setIsEnrollmentOpen(true)}
+            >
               {t('nav.enroll')}
             </Button>
           </div>
@@ -102,6 +118,11 @@ const Navigation = () => {
           </div>
         )}
       </div>
+      
+      <EnrollmentModal 
+        isOpen={isEnrollmentOpen} 
+        onClose={() => setIsEnrollmentOpen(false)} 
+      />
     </nav>
   );
 };

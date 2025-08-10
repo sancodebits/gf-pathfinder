@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Trophy, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import EnrollmentModal from "@/components/EnrollmentModal";
 
 const Hero = () => {
   const { t } = useLanguage();
+  const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
   
   const stats = [
     { icon: BookOpen, label: t('hero.courses'), value: "15+" },
@@ -49,7 +51,12 @@ const Hero = () => {
           
           {/* CTA Buttons */}
           <div className="animate-scale-in flex flex-col sm:flex-row gap-6 justify-center mb-20" style={{ animationDelay: "0.4s" }}>
-            <Button variant="accent" size="lg" className="text-lg px-10 py-6 font-semibold shadow-strong hover:shadow-glow transition-all duration-300 hover:scale-105">
+            <Button 
+              variant="accent" 
+              size="lg" 
+              className="text-lg px-10 py-6 font-semibold shadow-strong hover:shadow-glow transition-all duration-300 hover:scale-105"
+              onClick={() => setIsEnrollmentOpen(true)}
+            >
               {t('hero.start')}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
@@ -83,6 +90,11 @@ const Hero = () => {
           <path d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,48C672,43,768,53,864,64C960,75,1056,85,1152,85.3C1248,85,1344,75,1392,69.3L1440,64L1440,120L1392,120C1344,120,1248,120,1152,120C1056,120,960,120,864,120C768,120,672,120,576,120C480,120,384,120,288,120C192,120,96,120,48,120L0,120Z" fill="hsl(var(--background))" />
         </svg>
       </div>
+      
+      <EnrollmentModal 
+        isOpen={isEnrollmentOpen} 
+        onClose={() => setIsEnrollmentOpen(false)} 
+      />
     </section>
   );
 };

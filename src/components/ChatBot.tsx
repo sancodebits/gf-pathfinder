@@ -61,7 +61,7 @@ const ChatBot = () => {
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50">
+    <div className="fixed bottom-6 right-6 z-50" data-chat-bot>
       <Card className="w-80 h-96 flex flex-col shadow-strong">
         {/* Header */}
         <div className="bg-gradient-primary p-4 rounded-t-lg">

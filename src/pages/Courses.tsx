@@ -1,9 +1,13 @@
 import React from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, GraduationCap, Target, Clock, Users, CheckCircle } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Courses = () => {
+  const { t } = useLanguage();
   const courseDetails = [
     {
       icon: BookOpen,
@@ -80,9 +84,10 @@ const Courses = () => {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
+      <Navigation />
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-16">
+      <section className="pt-20 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
             Our <span className="bg-gradient-accent bg-clip-text text-transparent">Courses</span>
@@ -176,6 +181,7 @@ const Courses = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

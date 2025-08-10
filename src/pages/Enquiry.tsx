@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,8 +9,11 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Phone, Mail, MapPin, Send, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Enquiry = () => {
+  const { t } = useLanguage();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,7 +22,6 @@ const Enquiry = () => {
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
 
   const classes = [
     "Class 6", "Class 7", "Class 8", "Class 9", "Class 10",
@@ -54,9 +58,10 @@ const Enquiry = () => {
   };
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen">
+      <Navigation />
       {/* Hero Section */}
-      <section className="bg-gradient-hero py-16">
+      <section className="pt-20 pb-16 bg-gradient-hero">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
             Get in <span className="bg-gradient-accent bg-clip-text text-transparent">Touch</span>
@@ -222,6 +227,7 @@ const Enquiry = () => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };
