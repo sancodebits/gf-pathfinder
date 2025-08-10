@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
-import logo from "@/assets/logo.png";
+import AnimatedLogo from "@/components/AnimatedLogo";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import EnrollmentModal from "@/components/EnrollmentModal";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -30,11 +30,9 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 overflow-hidden rounded-xl">
-              <img src={logo} alt="Gayatri Foundation" className="w-full h-full object-cover" />
-            </div>
+            <AnimatedLogo className="w-12 h-12" />
             <div>
-              <h1 className="text-xl font-bold text-primary font-poppins">Gayatri Foundation</h1>
+              <h1 className="text-xl font-bold text-foreground font-poppins">Gayatri Foundation</h1>
               <p className="text-xs text-muted-foreground font-medium">{t('nav.excellence')}</p>
             </div>
           </Link>
@@ -63,7 +61,14 @@ const Navigation = () => {
               className="text-primary hover:bg-primary/10"
               onClick={() => {
                 const chatBot = document.querySelector('[data-chat-bot]');
-                if (chatBot) chatBot.scrollIntoView({ behavior: 'smooth' });
+                if (chatBot) {
+                  chatBot.scrollIntoView({ behavior: 'smooth' });
+                  // Trigger chatbot opening on mobile
+                  const chatButton = chatBot.querySelector('button');
+                  if (chatButton && window.innerWidth <= 768) {
+                    chatButton.click();
+                  }
+                }
               }}
             >
               <MessageCircle className="w-4 h-4 mr-2" />
@@ -106,11 +111,34 @@ const Navigation = () => {
               ))}
               <div className="flex flex-col space-y-2 pt-4">
                 <LanguageSwitcher />
-                <Button variant="ghost" size="sm" className="text-primary justify-start">
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="text-primary justify-start"
+                  onClick={() => {
+                    const chatBot = document.querySelector('[data-chat-bot]');
+                    if (chatBot) {
+                      chatBot.scrollIntoView({ behavior: 'smooth' });
+                      // Trigger chatbot opening on mobile
+                      const chatButton = chatBot.querySelector('button');
+                      if (chatButton) {
+                        chatButton.click();
+                      }
+                    }
+                    setIsMenuOpen(false);
+                  }}
+                >
                   <MessageCircle className="w-4 h-4 mr-2" />
                   {t('nav.chat')}
                 </Button>
-                <Button variant="hero" size="sm">
+                <Button 
+                  variant="hero" 
+                  size="sm"
+                  onClick={() => {
+                    setIsEnrollmentOpen(true);
+                    setIsMenuOpen(false);
+                  }}
+                >
                   {t('nav.enroll')}
                 </Button>
               </div>

@@ -135,9 +135,9 @@ const FounderDesk = () => {
         </div>
 
         {/* Vision Statement */}
-        <Card className="p-8 bg-gradient-secondary text-foreground text-center">
-          <h3 className="text-2xl font-bold mb-4 font-poppins">Our Collective Vision</h3>
-          <p className="text-lg leading-relaxed max-w-4xl mx-auto">
+        <Card className="p-8 bg-gradient-secondary text-center">
+          <h3 className="text-2xl font-bold mb-4 font-poppins text-foreground">Our Collective Vision</h3>
+          <p className="text-lg leading-relaxed max-w-4xl mx-auto text-foreground">
             Together, we envision an educational ecosystem where every student is empowered with knowledge, 
             skills, and values to become responsible global citizens. Our combined experience of over 60 years 
             in education drives our commitment to excellence and innovation in learning.

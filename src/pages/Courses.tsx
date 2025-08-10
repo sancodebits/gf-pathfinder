@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, GraduationCap, Target, Clock, Users, CheckCircle } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import EnrollmentModal from "@/components/EnrollmentModal";
 
 const Courses = () => {
   const { t } = useLanguage();
+  const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
   const courseDetails = [
     {
       icon: BookOpen,
@@ -107,8 +109,8 @@ const Courses = () => {
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center`}>
-                      <course.icon className="w-8 h-8 text-primary-foreground" />
+                    <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center shadow-medium`}>
+                      <course.icon className="w-8 h-8 text-white drop-shadow-sm" />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-1">{course.title}</h3>
@@ -148,7 +150,11 @@ const Courses = () => {
 
                 {/* CTA */}
                 <div className="flex space-x-4">
-                  <Button variant="hero" className="flex-1">
+                  <Button 
+                    variant="hero" 
+                    className="flex-1"
+                    onClick={() => setIsEnrollmentOpen(true)}
+                  >
                     Enroll Now
                   </Button>
                   <Button variant="outline" className="flex-1">
@@ -182,6 +188,11 @@ const Courses = () => {
         </div>
       </section>
       <Footer />
+      
+      <EnrollmentModal 
+        isOpen={isEnrollmentOpen} 
+        onClose={() => setIsEnrollmentOpen(false)} 
+      />
     </div>
   );
 };

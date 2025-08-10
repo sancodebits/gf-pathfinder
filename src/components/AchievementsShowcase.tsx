@@ -3,6 +3,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trophy, Award, Star, Users, Target, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from "react-router-dom";
+import EnrollmentModal from "@/components/EnrollmentModal";
 import schoolBuilding from "@/assets/school-building.jpg";
 import achievement1 from "@/assets/achievement1.jpg";
 import achievement2 from "@/assets/achievement2.jpg";
@@ -11,6 +13,7 @@ import achievement3 from "@/assets/achievement3.jpg";
 const AchievementsShowcase = () => {
   const { t } = useLanguage();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
   
   const achievements = [
     {
@@ -42,15 +45,24 @@ const AchievementsShowcase = () => {
   const achievementImages = [
     {
       src: achievement1,
-      alt: "Students celebrating academic achievement"
+      alt: "JNV Selection Results",
+      title: "JNV Entrance Success",
+      description: "85% of our students cleared JNV entrance exam",
+      stats: "340+ Students Selected"
     },
     {
       src: achievement2,
-      alt: "Modern classroom with awards"
+      alt: "Board Exam Toppers",
+      title: "Board Exam Excellence", 
+      description: "Outstanding results in Class 10th & 12th board exams",
+      stats: "95% First Division"
     },
     {
       src: achievement3,
-      alt: "JNV entrance coaching success"
+      alt: "Competitive Exam Results",
+      title: "Competitive Success",
+      description: "Students excelling in various competitive examinations",
+      stats: "500+ Selections"
     }
   ];
 
@@ -86,43 +98,42 @@ const AchievementsShowcase = () => {
 
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          {/* School Building Image with Floating Photos */}
-          <div className="relative">
-            <div className="relative overflow-hidden rounded-2xl shadow-strong h-96">
-              <img 
-                src={schoolBuilding} 
-                alt="Gayatri Foundation School Building"
-                className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-primary opacity-20" />
-              
-              {/* Full Panel Sliding Achievement Images */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="relative w-4/5 h-4/5 rounded-xl overflow-hidden shadow-strong">
-                  {achievementImages.map((image, index) => (
-                    <div 
-                      key={index}
-                      className={`absolute inset-0 transition-opacity duration-1000 ${
-                        index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-                      }`}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.alt}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-primary opacity-20" />
-                    </div>
-                  ))}
+          {/* Full Panel Image Display */}
+          <div className="relative h-96 rounded-2xl overflow-hidden shadow-strong">
+            {/* Background Image */}
+            <img 
+              src={achievementImages[currentImageIndex].src} 
+              alt={achievementImages[currentImageIndex].alt}
+              className="w-full h-full object-cover transition-all duration-1000"
+            />
+            
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+            
+            {/* Content Card - Transparent */}
+            <div className="absolute bottom-6 left-6 right-6">
+              <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <Trophy className="w-6 h-6 text-yellow-400" />
+                  <h3 className="text-xl font-bold">{achievementImages[currentImageIndex].title}</h3>
                 </div>
-              </div>
-              
-              <div className="absolute bottom-6 left-6 right-6 z-10">
-                <Card className="p-6 bg-card/95 backdrop-blur-md border-border shadow-medium">
-                  <h3 className="text-2xl font-bold text-foreground mb-2">Modern Learning Campus</h3>
-                  <p className="text-muted-foreground">State-of-the-art facilities designed for holistic education</p>
-                </Card>
-              </div>
+                <p className="text-white/90 mb-3">{achievementImages[currentImageIndex].description}</p>
+                <div className="text-yellow-400 font-semibold text-lg">
+                  {achievementImages[currentImageIndex].stats}
+                </div>
+              </Card>
+            </div>
+            
+            {/* Image Indicators */}
+            <div className="absolute top-4 right-4 flex space-x-2">
+              {achievementImages.map((_, index) => (
+                <div 
+                  key={index}
+                  className={`w-2 h-2 rounded-full transition-colors ${
+                    index === currentImageIndex ? 'bg-yellow-400' : 'bg-white/50'
+                  }`}
+                />
+              ))}
             </div>
           </div>
 
@@ -154,13 +165,20 @@ const AchievementsShowcase = () => {
                 {t('achievements.join')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="accent" size="lg" className="flex-1 group">
-                  {t('achievements.enroll')}
+                <Button 
+                  variant="accent" 
+                  size="lg" 
+                  className="flex-1 group"
+                  onClick={() => setIsEnrollmentOpen(true)}
+                >
+                  {t('nav.enroll')}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted">
-                  {t('achievements.stories')}
-                </Button>
+                <Link to="/about">
+                  <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted w-full">
+                    {t('achievements.viewStories')}
+                  </Button>
+                </Link>
               </div>
             </Card>
           </div>
@@ -181,6 +199,11 @@ const AchievementsShowcase = () => {
           ))}
         </div>
       </div>
+      
+      <EnrollmentModal 
+        isOpen={isEnrollmentOpen} 
+        onClose={() => setIsEnrollmentOpen(false)} 
+      />
     </section>
   );
 };

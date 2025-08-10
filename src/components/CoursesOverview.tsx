@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, GraduationCap, Target, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import EnrollmentModal from "@/components/EnrollmentModal";
 
 const CoursesOverview = () => {
   const { t } = useLanguage();
+  const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
   
   const courses = [
     {
@@ -80,8 +82,12 @@ const CoursesOverview = () => {
                 </ul>
                 
                 {/* CTA */}
-                <Button variant="outline" className="w-full group-hover:bg-primary group-hover:text-primary-foreground">
-                  {t('courses.learn')}
+                <Button 
+                  variant="outline" 
+                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
+                  onClick={() => setIsEnrollmentOpen(true)}
+                >
+                  {t('courses.enroll')}
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -97,6 +103,11 @@ const CoursesOverview = () => {
           </Button>
         </div>
       </div>
+      
+      <EnrollmentModal 
+        isOpen={isEnrollmentOpen} 
+        onClose={() => setIsEnrollmentOpen(false)} 
+      />
     </section>
   );
 };
