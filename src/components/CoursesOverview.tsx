@@ -88,7 +88,7 @@ const CoursesOverview = () => {
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
                   onClick={() => setIsEnrollmentOpen(true)}
                 >
-                  Enroll to Course
+                  Enroll in course
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>

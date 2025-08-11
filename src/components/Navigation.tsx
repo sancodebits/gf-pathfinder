@@ -58,15 +58,17 @@ const Navigation = () => {
             <Button 
               variant="ghost" 
               size="sm" 
-              className="text-primary hover:bg-primary/10 hover:text-primary"
+              className="text-foreground hover:bg-primary/10 hover:text-foreground"
               onClick={() => {
                 const chatBot = document.querySelector('[data-chat-bot]');
                 if (chatBot) {
                   chatBot.scrollIntoView({ behavior: 'smooth' });
-                  // Trigger chatbot opening on mobile
-                  const chatButton = chatBot.querySelector('button');
-                  if (chatButton && window.innerWidth <= 768) {
-                    chatButton.click();
+                  const trigger = chatBot.querySelector('[data-chat-trigger]') as HTMLButtonElement | null;
+                  if (trigger) {
+                    trigger.click();
+                  } else {
+                    const chatButton = chatBot.querySelector('button') as HTMLButtonElement | null;
+                    if (chatButton) chatButton.click();
                   }
                 }
               }}
@@ -114,15 +116,17 @@ const Navigation = () => {
                 <Button 
                   variant="ghost" 
                   size="sm" 
-                  className="text-primary justify-start"
+                  className="text-foreground justify-start hover:bg-primary/10 hover:text-foreground"
                   onClick={() => {
                     const chatBot = document.querySelector('[data-chat-bot]');
                     if (chatBot) {
                       chatBot.scrollIntoView({ behavior: 'smooth' });
-                      // Trigger chatbot opening on mobile
-                      const chatButton = chatBot.querySelector('button');
-                      if (chatButton) {
-                        chatButton.click();
+                      const trigger = chatBot.querySelector('[data-chat-trigger]') as HTMLButtonElement | null;
+                      if (trigger) {
+                        trigger.click();
+                      } else {
+                        const chatButton = chatBot.querySelector('button') as HTMLButtonElement | null;
+                        if (chatButton) chatButton.click();
                       }
                     }
                     setIsMenuOpen(false);

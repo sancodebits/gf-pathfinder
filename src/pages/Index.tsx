@@ -6,7 +6,7 @@ import AchievementsShowcase from "@/components/AchievementsShowcase";
 import FounderDesk from "@/components/FounderDesk";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import ChatBot from "@/components/ChatBot";
+
 
 const Index = () => {
   return (
@@ -18,7 +18,7 @@ const Index = () => {
       <FounderDesk />
       <Testimonials />
       <Footer />
-      <ChatBot />
+      
     </div>
   );
 };

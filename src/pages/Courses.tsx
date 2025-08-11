@@ -118,7 +118,7 @@ const Courses = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-xl md:text-2xl font-bold text-accent break-words">{course.fee}</div>
+                    <div className="text-lg sm:text-xl md:text-2xl font-bold text-accent break-words">{course.fee}</div>
                     <div className="text-xs md:text-sm text-muted-foreground">Starting from</div>
                   </div>
                 </div>

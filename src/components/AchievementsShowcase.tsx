@@ -175,7 +175,7 @@ const AchievementsShowcase = () => {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Link to="/#success-stories">
-                  <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted w-full">
+                  <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted hover:text-foreground w-full">
                     Our Success Stories
                   </Button>
                 </Link>

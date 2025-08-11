@@ -12,12 +12,12 @@ const About = () => {
       <Navigation />
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-16 bg-gradient-to-br from-primary/10 to-accent/10">
+        <section className="py-16 bg-gradient-hero">
           <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-poppins">
+            <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 font-poppins">
               {t('about.title')}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-primary-foreground/90 max-w-3xl mx-auto">
               {t('about.subtitle')}
             </p>
           </div>
