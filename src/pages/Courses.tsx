@@ -110,7 +110,7 @@ const Courses = () => {
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center space-x-4">
                     <div className={`w-16 h-16 ${course.color} rounded-xl flex items-center justify-center shadow-medium`}>
-                      <course.icon className="w-8 h-8 text-white drop-shadow-sm" />
+                      <course.icon className={`w-8 h-8 ${course.color.includes('secondary') ? 'text-foreground' : 'text-white'} drop-shadow-sm`} />
                     </div>
                     <div>
                       <h3 className="text-2xl font-bold text-foreground mb-1">{course.title}</h3>
@@ -118,8 +118,8 @@ const Courses = () => {
                     </div>
                   </div>
                   <div className="text-right">
-                    <div className="text-2xl font-bold text-accent">{course.fee}</div>
-                    <div className="text-sm text-muted-foreground">Starting from</div>
+                    <div className="text-xl md:text-2xl font-bold text-accent break-words">{course.fee}</div>
+                    <div className="text-xs md:text-sm text-muted-foreground">Starting from</div>
                   </div>
                 </div>
 

@@ -31,12 +31,12 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-background">
+    <section id="success-stories" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Success <span className="bg-gradient-secondary bg-clip-text text-transparent">Stories</span>
+            Success <span className="text-foreground">Stories</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Hear from our successful students who achieved their academic dreams with Gayatri Foundation
@@ -58,7 +58,7 @@ const Testimonials = () => {
                 <div>
                   <h4 className="font-bold text-foreground">{testimonial.name}</h4>
                   <p className="text-sm text-muted-foreground">{testimonial.class}</p>
-                  <p className="text-sm text-secondary font-medium">{testimonial.achievement}</p>
+                  <p className="text-sm text-foreground font-medium">{testimonial.achievement}</p>
                 </div>
               </div>
 

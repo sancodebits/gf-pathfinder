@@ -99,7 +99,7 @@ const AchievementsShowcase = () => {
         {/* Main Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Full Panel Image Display */}
-          <div className="relative h-96 rounded-2xl overflow-hidden shadow-strong">
+          <div className="relative h-[28rem] md:h-[34rem] rounded-2xl overflow-hidden shadow-strong">
             {/* Background Image */}
             <img 
               src={achievementImages[currentImageIndex].src} 
@@ -111,7 +111,7 @@ const AchievementsShowcase = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             
             {/* Content Card - Transparent */}
-            <div className="absolute bottom-6 left-6 right-6">
+            <div className="absolute bottom-6 left-6 right-auto w-[85%] sm:w-auto max-w-md">
               <Card className="bg-white/10 backdrop-blur-md border-white/20 text-white p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <Trophy className="w-6 h-6 text-yellow-400" />
@@ -174,9 +174,9 @@ const AchievementsShowcase = () => {
                   {t('nav.enroll')}
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
-                <Link to="/about">
+                <Link to="/#success-stories">
                   <Button variant="outline" size="lg" className="flex-1 border-border text-foreground hover:bg-muted w-full">
-                    {t('achievements.viewStories')}
+                    Our Success Stories
                   </Button>
                 </Link>
               </div>

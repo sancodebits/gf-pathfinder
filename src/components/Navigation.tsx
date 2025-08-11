@@ -18,7 +18,7 @@ const Navigation = () => {
     { name: t('nav.courses'), path: "/courses" },
     { name: t('nav.enquiry'), path: "/enquiry" },
     { name: t('nav.about'), path: "/about" },
-    { name: t('nav.contact'), path: "/contact" },
+    
     { name: t('nav.news'), path: "/news" }
   ];
 
@@ -58,7 +58,7 @@ const Navigation = () => {
             <Button 
               variant="ghost" 
               size="sm" 
-              className="text-primary hover:bg-primary/10"
+              className="text-primary hover:bg-primary/10 hover:text-primary"
               onClick={() => {
                 const chatBot = document.querySelector('[data-chat-bot]');
                 if (chatBot) {

@@ -9,7 +9,7 @@ const Footer = () => {
     { name: "Courses", path: "/courses" },
     { name: "Enquiry", path: "/enquiry" },
     { name: "About Us", path: "/about" },
-    { name: "Contact", path: "/contact" }
+    
   ];
 
   const courses = [

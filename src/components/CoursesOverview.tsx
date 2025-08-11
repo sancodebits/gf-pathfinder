@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { BookOpen, Brain, GraduationCap, Target, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import EnrollmentModal from "@/components/EnrollmentModal";
+import { Link } from "react-router-dom";
 
 const CoursesOverview = () => {
   const { t } = useLanguage();
@@ -64,7 +65,7 @@ const CoursesOverview = () => {
               <div className="p-6">
                 {/* Icon & Title */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 ${course.color} rounded-xl mb-4`}>
-                  <course.icon className="w-8 h-8 text-primary-foreground" />
+                  <course.icon className={`w-8 h-8 ${course.color.includes('secondary') ? 'text-foreground' : 'text-primary-foreground'}`} />
                 </div>
                 
                 <h3 className="text-xl font-bold text-foreground mb-2 font-poppins">{course.title}</h3>
@@ -87,7 +88,7 @@ const CoursesOverview = () => {
                   className="w-full group-hover:bg-primary group-hover:text-primary-foreground"
                   onClick={() => setIsEnrollmentOpen(true)}
                 >
-                  {t('courses.enroll')}
+                  Enroll to Course
                   <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </div>
@@ -97,9 +98,11 @@ const CoursesOverview = () => {
 
         {/* Bottom CTA */}
         <div className="text-center">
-          <Button variant="hero" size="lg" className="px-8 py-4">
-            {t('courses.viewall')}
-            <ArrowRight className="w-5 h-5 ml-2" />
+          <Button asChild variant="hero" size="lg" className="px-8 py-4">
+            <Link to="/courses">
+              {t('courses.viewall')}
+              <ArrowRight className="w-5 h-5 ml-2" />
+            </Link>
           </Button>
         </div>
       </div>

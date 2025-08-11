@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { BookOpen, Users, Trophy, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import EnrollmentModal from "@/components/EnrollmentModal";
-
+import { Link } from "react-router-dom";
 const Hero = () => {
   const { t } = useLanguage();
   const [isEnrollmentOpen, setIsEnrollmentOpen] = useState(false);
@@ -60,8 +60,8 @@ const Hero = () => {
               {t('hero.start')}
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-            <Button variant="hero" size="lg" className="text-lg px-10 py-6 font-semibold backdrop-blur-sm shadow-colored">
-              {t('hero.explore')}
+            <Button asChild variant="hero" size="lg" className="text-lg px-10 py-6 font-semibold backdrop-blur-sm shadow-colored">
+              <Link to="/courses">{t('hero.explore')}</Link>
             </Button>
           </div>
           

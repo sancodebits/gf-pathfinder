@@ -49,14 +49,17 @@ const ChatBot = () => {
 
   if (!isOpen) {
     return (
-      <Button
-        onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full shadow-strong animate-pulse-glow"
-        variant="hero"
-        size="icon"
-      >
-        <MessageCircle className="w-6 h-6" />
-      </Button>
+      <div className="fixed bottom-6 right-6 z-50" data-chat-bot>
+        <Button
+          data-chat-trigger
+          onClick={() => setIsOpen(true)}
+          className="w-14 h-14 rounded-full shadow-strong animate-pulse-glow"
+          variant="hero"
+          size="icon"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </Button>
+      </div>
     );
   }
 
