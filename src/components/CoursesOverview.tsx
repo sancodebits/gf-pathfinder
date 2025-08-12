@@ -65,7 +65,7 @@ const CoursesOverview = () => {
               <div className="p-6">
                 {/* Icon & Title */}
                 <div className={`inline-flex items-center justify-center w-16 h-16 ${course.color} rounded-xl mb-4`}>
-                  <course.icon className={`w-8 h-8 ${course.color.includes('secondary') ? 'text-foreground' : 'text-primary-foreground'}`} />
+                  <course.icon className={`w-8 h-8 ${(course.title === 'Board Focused') ? 'text-foreground' : (course.color.includes('secondary') ? 'text-foreground' : 'text-primary-foreground')}`} />
                 </div>
                 
                 <h3 className="text-xl font-bold text-foreground mb-2 font-poppins">{course.title}</h3>

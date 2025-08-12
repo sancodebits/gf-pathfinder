@@ -24,7 +24,7 @@ const LanguageSwitcher = () => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10">
+        <Button variant="ghost" size="sm" className="text-primary hover:bg-primary/10 hover:text-foreground">
           <Globe className="w-4 h-4 mr-2" />
           <span className="hidden sm:inline">{currentLanguage?.flag} {currentLanguage?.name}</span>
           <span className="sm:hidden">{currentLanguage?.flag}</span>
