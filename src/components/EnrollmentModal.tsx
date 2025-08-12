@@ -30,7 +30,7 @@ const EnrollmentModal = ({ isOpen, onClose }: EnrollmentModalProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Enrollment form submitted:", formData);
+    // Sensitive data intentionally not logged to protect user privacy
     toast({
       title: t('enrollment.success'),
       description: t('enrollment.successMessage'),
@@ -75,6 +75,7 @@ const EnrollmentModal = ({ isOpen, onClose }: EnrollmentModalProps) => {
                 <Label htmlFor="studentName">{t('enrollment.studentName')} *</Label>
                 <Input
                   id="studentName"
+                  autoComplete="name"
                   value={formData.studentName}
                   onChange={(e) => handleInputChange('studentName', e.target.value)}
                   required
@@ -143,6 +144,9 @@ const EnrollmentModal = ({ isOpen, onClose }: EnrollmentModalProps) => {
                 <Input
                   id="phone"
                   type="tel"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  pattern="^[0-9+()\\-\\s]{7,15}$"
                   value={formData.phone}
                   onChange={(e) => handleInputChange('phone', e.target.value)}
                   required
@@ -155,6 +159,7 @@ const EnrollmentModal = ({ isOpen, onClose }: EnrollmentModalProps) => {
               <Input
                 id="email"
                 type="email"
+                autoComplete="email"
                 value={formData.email}
                 onChange={(e) => handleInputChange('email', e.target.value)}
               />
@@ -164,6 +169,7 @@ const EnrollmentModal = ({ isOpen, onClose }: EnrollmentModalProps) => {
               <Label htmlFor="address">{t('enrollment.address')} *</Label>
               <Textarea
                 id="address"
+                autoComplete="street-address"
                 value={formData.address}
                 onChange={(e) => handleInputChange('address', e.target.value)}
                 rows={3}

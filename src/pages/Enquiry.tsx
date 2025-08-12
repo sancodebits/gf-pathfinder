@@ -88,6 +88,7 @@ const Enquiry = () => {
                       placeholder="Enter your full name"
                       value={formData.name}
                       onChange={(e) => handleInputChange("name", e.target.value)}
+                      autoComplete="name"
                       required
                     />
                   </div>
@@ -99,6 +100,7 @@ const Enquiry = () => {
                       placeholder="Enter your email"
                       value={formData.email}
                       onChange={(e) => handleInputChange("email", e.target.value)}
+                      autoComplete="email"
                       required
                     />
                   </div>
@@ -109,9 +111,13 @@ const Enquiry = () => {
                     <Label htmlFor="phone">Phone Number *</Label>
                     <Input
                       id="phone"
+                      type="tel"
                       placeholder="Enter your phone number"
                       value={formData.phone}
                       onChange={(e) => handleInputChange("phone", e.target.value)}
+                      inputMode="tel"
+                      autoComplete="tel"
+                      pattern="^[0-9+()\\-\\s]{7,15}$"
                       required
                     />
                   </div>
