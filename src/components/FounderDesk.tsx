@@ -33,14 +33,14 @@ const FounderDesk = () => {
     },
     {
       image: cofounder1,
-      name: "Mr. Amit Patel",
+      name: "Er. Sandeep Singh",
       designation: "Co-Founder & Academic Head",
       qualification: "M.Sc Physics, B.Ed",
       experience: "12+ Years in Science Education",
       message: "Innovation in teaching methods and personalized attention are key to student success. We believe in making learning engaging and effective.",
       achievements: ["Science Department Head", "Technology Integration Expert", "Student Mentor"],
-      email: "amit@gayatrifoundation.edu",
-      linkedin: "#"
+      email: "sandeepsingh.gvt@gmail.com",
+      linkedin: "https://www.linkedin.com/in/sancode/"
     },
     {
       image: cofounder2,
